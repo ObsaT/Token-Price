@@ -1,0 +1,13 @@
+$text : white;
+.header {
+  display: flex;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #080808;;
+  color: $text;
+  justify-content: center;
+  justify-items: center;
+  z-index: 1000;
+}

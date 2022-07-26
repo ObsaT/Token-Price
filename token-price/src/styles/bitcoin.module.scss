@@ -1,0 +1,42 @@
+@mixin flexCenter {
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+}
+$color: white;
+.center {
+  display: flex;
+}
+$text: white;
+.container {
+  @include flexCenter();
+  display: flex;
+  color: $color;
+  .wrapper {
+    padding: 20px;
+    background: rgb(19, 18, 18);
+    border-radius: 10px;
+    width: 40%;
+    height: 200px;
+  }
+  .selection {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    border-bottom: 5px;
+  }
+  .priceData {
+    @include flexCenter();
+    color: $color;
+    margin-top: 20px;
+    h1 {
+      font-size: 50px;
+    }
+  }
+}
+.ui.selection.dropdown {
+  min-width: -43cm;
+  min-height: -6.285714290000001em;
+  background: rgb(153, 9, 9);
+}
+ 
