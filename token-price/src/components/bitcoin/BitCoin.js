@@ -1,8 +1,8 @@
 import { getCoin, priceData, selectCoin } from '../../store/slices/CoinSlice';
 import { useSelector, useDispatch } from 'react-redux'
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from '../../styles/bitcoin.module.scss'
-import { Select } from 'semantic-ui-react'
+import { Segment, Select } from 'semantic-ui-react'
 import LoaderComponent from '../ui/LoaderComponent';
 const currencyOPtion = [
   { key: 'USD', value: 'USD', text: 'USD' },
@@ -10,7 +10,6 @@ const currencyOPtion = [
   { key: 'GBP', value: 'GBP', text: 'GBP' },
 ]
 const BitCoin = () => {
-  var interval = null;
   const despatch = useDispatch();
   const coin = useSelector(selectCoin);
   const [currency, setCurrency] = useState('USD')
@@ -29,9 +28,7 @@ const BitCoin = () => {
             <div>
               <h1>{currency}</h1>
             </div>
-            <div>
-              <Select placeholder={currency} options={currencyOPtion} onChange = {handleSelectedValue}/>
-            </div>
+              <Select  placeholder={currency} options={currencyOPtion} onChange = {handleSelectedValue}/>
           </div>
            <div className={styles.priceData}>
             <div style={{display:'flex', position:'absolute', marginTop:'70'}}>

@@ -5,8 +5,9 @@ import {useDispatch } from 'react-redux'
 import { getCoin } from '../store/slices/CoinSlice'
 export default function Home() {
   return (
+    <>
       <div style={{marginTop:80}}>
         <BitCoin/>
-      </div>
+      </div></>
   )
 }

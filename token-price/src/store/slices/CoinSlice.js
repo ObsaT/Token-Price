@@ -4,12 +4,8 @@ import axios from 'axios';
 export const getCoin = createAsyncThunk('coin/getCoinAsync', async (currency) => {
    let data = null;
    try {
-   await axios.get(`https://api.coindesk.com/v1/bpi/currentprice.json`).then(res => {
-    bitcoinApi.getBitcoin().then(response => {
-        console.log(response);
-    })
+   await bitcoinApi.getBitcoin().then(res => {
         data = res.data.bpi[currency].rate;
-        console.log(currency);
     });
    } catch (error) {
    }
