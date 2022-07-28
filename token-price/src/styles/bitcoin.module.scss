@@ -32,6 +32,12 @@ $text: white;
     h1 {
       font-size: 50px;
     }
+    @media screen and (max-width: 667px) {
+       h1 {
+      font-size: 20px;
+    }
+    }
+   
   }
 }
 .ui.selection.dropdown {
@@ -39,4 +45,5 @@ $text: white;
   min-height: -6.285714290000001em;
   background: rgb(153, 9, 9);
 }
+ 
  
