@@ -7,12 +7,11 @@ const BitCoin = () => {
   const priceData = useSelector(selectCoin);
   const [currency, setCurrency] = useState('USD');
   useEffect(() => {
-    despatch(getCoin())
     setInterval(() => { despatch(getCoin()) }, 5000)
   }, [currency])
   const handleSelectedValue = (e) => {
     setCurrency(e.target.value)
-    despatch(getCoin(currency))
+    despatch(getCoin())
   }
   return (
     <>
