@@ -14,37 +14,41 @@ const BitCoin = () => {
     despatch(getCoin())
   }
   return (
+    
     <>
-      <div className={styles.container}>
-        <div className={styles.wrapper}>
-          <div className={styles.selection}>
-            <div>
-              <span>{priceData.price?.bpi[currency]?.description}</span>
-            </div>
-            <span className={styles.content}>
-            </span>
-            <select style={{ width: 60, height: 30, borderRadius: 5, fontWeight: 'bold', fontFamily: 'sans-serif' }} onChange={handleSelectedValue}>
-              <option value="USD">USD</option>
-              <option value="EUR">EUR</option>
-              <option value="GBP">GBP</option>
-            </select>
-          </div>
-          <div className={styles.priceData}>
-            <div style={{ display: 'flex', marginTop: '70', flexDirection: 'column' }}>
-              <h1>
-                {
-                currency === 'USD' && <small>&#36;</small> 
-                || currency === 'EUR' && <small>&euro;</small> 
-                || currency === 'GBP' && <small>&pound;</small> }
-                {priceData.price?.bpi[currency]?.rate}
-              </h1>
-              <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <small>Updated on: <span style={{ color: 'red' }}>{priceData.price?.time?.updated}</span> </small>
-              </div>
-            </div>
-          </div>
+{priceData.price?.bpi[currency]?.rate && (
+  <div className={styles.container}>
+  <div className={styles.wrapper}>
+    <div className={styles.selection}>
+      <div>
+        <span>{priceData.price?.bpi[currency]?.description}</span>
+      </div>
+      <span className={styles.content}>
+      </span>
+      <select style={{ width: 60, height: 30, borderRadius: 5, fontWeight: 'bold', fontFamily: 'sans-serif' }} onChange={handleSelectedValue}>
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="GBP">GBP</option>
+      </select>
+    </div>
+    <div className={styles.priceData}>
+      <div style={{ display: 'flex', marginTop: '70', flexDirection: 'column' }}>
+        <h1>
+          {
+          currency === 'USD' && <small>&#36;</small> 
+          || currency === 'EUR' && <small>&euro;</small> 
+          || currency === 'GBP' && <small>&pound;</small> }
+          {priceData.price?.bpi[currency]?.rate}
+        </h1>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <small>Updated on: <span style={{ color: 'red' }}>{priceData.price?.time?.updated}</span> </small>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+)}
+   
     </>
   )
 }
